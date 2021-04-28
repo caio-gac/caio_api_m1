@@ -7,12 +7,16 @@ const bcrypt = require('bcrypt');
 
 // criação do 'schema' para o usuário
 const userSchema = new Schema({
-    name: { type: String, required: true, unique: false },
-    username: { type: String, required: true, unique: true, lowercase: true },
+    name: { type: String, required: true },
+    lastname: { type: String, required: true },
+    birthday: { type: String, required: true },
+    login: { type: String, required: true, unique: false },
     phone: { type: String, required: false },
-    email: { type: String, required: true, unique: true, lowercase: true },
-    password: { type: String, required: true, select: false },
-    created: { type: Date, default: Date.now }
+    email: { type: String, required: true},
+    password: { type: String, required: true },
+    dicasenha: { type: String},
+    cidade: { type: String},
+    estado: { type: String},
 });
 
 // criando uma nova função para preparar os campos

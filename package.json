@@ -1,7 +1,7 @@
 {
   "name": "nodeapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Exemplo de REST API criada na disciplina de Desenvolvimento de Aplicações Móveis do curso de Engenharia de Software da Universidade do Contestado (UnC) - Campus Mafra",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,6 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2"
-  }
+  },
+  "devDependencies": {}
 }
