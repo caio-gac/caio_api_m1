@@ -28,7 +28,6 @@ router.get('/', async (req,res) => {
 // criando o endpoint para salvar 
 router.post('/create', async (req,res) => {
     const { nome, site, phone, email, password } = req.body;
-    console.log(`${nome} - ${site} - ${phone} - ${email} - ${password}`);
     // testando se todos os campos obrigatórios foram informados
     if (!nome || !site || !email ) 
         return res.send({ error: 'Verifique se todos os campos obrigatórios foram informados! '});
@@ -63,7 +62,7 @@ router.put('/update/:id', auth,  async (req,res) => {
         return res.status(201).send({ lojaChanged, token: createlojaToken(lojaChanged.id) });
     }
     catch (err) {
-        return res.send({ error: `Erro ao atualizar o usuário: ${err}`})
+        return res.send({ error: `Erro ao atualizar as lojas: ${err}`})
     }     
 });
 
@@ -71,10 +70,10 @@ router.put('/update/:id', auth,  async (req,res) => {
 router.delete('/delete/:id', auth, async (req,res) => {
     try {
         await Loja.findByIdAndDelete(req.params.id);
-        return res.send({ error: 'Usuário removido com sucesso!' });
+        return res.send({ error: 'loja removida com sucesso!' });
     }
     catch (err) {
-        return res.send({ error: 'Erro ao remover usuário!' });
+        return res.send({ error: 'Erro ao remover loja!' });
     }     
 });
 
